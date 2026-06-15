@@ -187,6 +187,19 @@ h1, h2, h3 {
     color: var(--primary-light);
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -616,10 +629,11 @@ footer {
 
 @media (max-width: 768px) {
     .mockup-container {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        height: 250px;
+        position: relative;
+        display: block;
+        max-width: 100%;
+        overflow: visible;
     }
 
     .hero-title {
@@ -635,28 +649,49 @@ footer {
     }
 
     .nav-container {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
         flex-direction: column;
-        gap: 15px;
-        padding-bottom: 10px;
+        background: rgba(15, 23, 42, 0.95);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .nav-menu.active {
+        display: flex;
     }
 
     .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
         gap: 15px;
+        margin-bottom: 15px;
     }
     
-    .desktop-img, .mobile-img {
-        position: relative !important;
-        width: 100% !important;
-        max-width: 300px;
-        transform: none !important;
-        animation: none !important;
-        margin-bottom: 20px;
-        top: auto !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
+    .desktop-img {
+        width: 85%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: perspective(800px) rotateY(-5deg) rotateX(5deg);
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .mobile-img {
+        width: 25%;
+        position: absolute;
+        bottom: -20px;
+        left: 5%;
+        animation: float 5s ease-in-out infinite reverse;
     }
 }
