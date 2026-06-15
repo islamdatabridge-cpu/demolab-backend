@@ -625,17 +625,10 @@ footer {
     .pricing-card.popular:hover {
         transform: translateY(-10px);
     }
+    }
 }
 
 @media (max-width: 768px) {
-    .mockup-container {
-        height: 250px;
-        position: relative;
-        display: block;
-        max-width: 100%;
-        overflow: visible;
-    }
-
     .hero-title {
         font-size: 2.5rem;
     }
@@ -678,20 +671,36 @@ footer {
         margin-bottom: 15px;
     }
     
+    .mockup-container {
+        height: auto;
+        position: relative;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 40px;
+    }
+
     .desktop-img {
-        width: 85%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: perspective(800px) rotateY(-5deg) rotateX(5deg);
-        animation: float 6s ease-in-out infinite;
+        width: 100%;
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none !important;
+        animation: floatY 6s ease-in-out infinite !important;
     }
 
     .mobile-img {
-        width: 25%;
+        width: 35%;
         position: absolute;
-        bottom: -20px;
-        left: 5%;
-        animation: float 5s ease-in-out infinite reverse;
+        bottom: 0;
+        left: 0;
+        transform: none !important;
+        animation: floatY 5s ease-in-out infinite reverse !important;
     }
+}
+
+@keyframes floatY {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
