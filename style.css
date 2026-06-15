@@ -616,7 +616,10 @@ footer {
 
 @media (max-width: 768px) {
     .mockup-container {
-        height: 250px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-title {
@@ -632,12 +635,28 @@ footer {
     }
 
     .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+
+    .nav-links {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
-
-    .nav-links {
-        display: none;
+    
+    .desktop-img, .mobile-img {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 300px;
+        transform: none !important;
+        animation: none !important;
+        margin-bottom: 20px;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
     }
 }
